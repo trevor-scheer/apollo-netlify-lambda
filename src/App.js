@@ -2,6 +2,12 @@ import React, { Component } from "react"
 import logo from "./logo.svg"
 import "./App.css"
 
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: "/.netlify/functions/graphql",
+  cache: new InMemoryCache(),
+});
 class LambdaDemo extends Component {
   constructor(props) {
     super(props)
